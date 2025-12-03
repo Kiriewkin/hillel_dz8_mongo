@@ -1,0 +1,11 @@
+extends template.pug
+
+block content
+  .container.mt-4
+    h1.text-center.mb-4 Сategories
+
+    ul
+      each category in data
+        li
+          a(href=`/category/${category.url}`)
+            = category.title.charAt(0).toUpperCase() + category.title.slice(1)

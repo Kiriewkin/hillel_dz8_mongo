@@ -1,0 +1,29 @@
+extends template.pug
+
+block content
+  .container.text-center.mt-5
+    .row.justify-content-center
+      .col-md-8
+        h1.display-1.text-danger 404
+        h2.text-dark.mt-3 Oops! Page not found
+
+        p.lead.text-muted.mt-2= message
+
+        h3.mt-4 Available categories:
+        ul.list-unstyled
+          each cat in categories
+            li
+              a(href=`/category/${cat.url}`)= cat.title
+
+        h3.mt-4 Maybe you will like these products:
+        .row
+          each item in goods
+            .col-md-4.mb-3
+              .card
+                img.card-img-top(src=item.image)
+                .card-body
+                  h5.card-title= item.title
+                  p.card-text $#{item.price}
+                  a.btn.btn-primary(href=`/goods/${item.url}`) View
+              
+        a.btn.btn-secondary.mt-4(href='/') Go to Homepage

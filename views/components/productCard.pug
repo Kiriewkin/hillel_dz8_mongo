@@ -1,0 +1,12 @@
+mixin productCard(item, category)
+  .col-md-3.mb-4
+    .card.h-100.p-2
+      img.card-img-top(src=item.image)
+      .card-body
+        h5.card-title= item.title
+        p.card-text= item.description
+        p.card-text
+          b Price: $#{item.price}
+        p.card-text In stock: #{item.stock}
+      .card-footer
+        a.btn.btn-primary(href=`/category/${category}/${item.url}`) View Details

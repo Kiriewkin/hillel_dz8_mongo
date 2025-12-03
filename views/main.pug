@@ -1,0 +1,10 @@
+extends template.pug
+include components/productCard.pug
+
+block content
+  each items, categoryName in categories
+    .container.mt-4
+      h1.text-center.mb-4= categoryName.charAt(0).toUpperCase() + categoryName.slice(1)
+      .row
+        each item in items
+          +productCard(item, categoryName)

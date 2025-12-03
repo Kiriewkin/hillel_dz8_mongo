@@ -1,0 +1,11 @@
+.myNavItem {
+    color: black;
+    transition: color 0.3s;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.myNavItem:hover {
+    color: grey;
+}

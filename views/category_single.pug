@@ -1,0 +1,13 @@
+extends template
+include components/productCard.pug
+
+block content
+  .container.mt-4
+    h1.text-center.mb-4= `${title} Catalog`
+
+    if items.length
+      .row
+        each item in items
+          +productCard(item, title.toLowerCase())
+    else
+      .alert.alert-warning.text-center No products found in this category.
