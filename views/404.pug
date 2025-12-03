@@ -1,4 +1,5 @@
 extends template.pug
+include ./components/productCard.pug
 
 block content
   .container.text-center.mt-5
@@ -18,12 +19,6 @@ block content
         h3.mt-4 Maybe you will like these products:
         .row
           each item in goods
-            .col-md-4.mb-3
-              .card
-                img.card-img-top(src=item.image)
-                .card-body
-                  h5.card-title= item.title
-                  p.card-text $#{item.price}
-                  a.btn.btn-primary(href=`/goods/${item.url}`) View
+            +productCard(item, item.category)
               
         a.btn.btn-secondary.mt-4(href='/') Go to Homepage

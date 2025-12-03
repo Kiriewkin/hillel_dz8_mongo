@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { getPageByUrl } from "../db/query.js";
+import { getPageByUrl } from "../db/query/pages.js";
 import { render404 } from "../helpers/render404.js";
 
 export const aboutRouter = Router();

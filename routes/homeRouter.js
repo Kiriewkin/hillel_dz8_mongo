@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getGoods } from '../db/query.js';
+import { getItemsByCategory } from '../db/query/goods.js';
 
 export const homeRouter = Router();
 
@@ -8,15 +8,13 @@ function getRandomItems(arr, count) {
 }
 
 homeRouter.get('/', async (req, res) => {
-    const goods = await getGoods();
-
-    const phones = getRandomItems(goods.phones, 4);
-    const laptops = getRandomItems(goods.laptops, 4);
+    const phones = await getItemsByCategory('phones');
+    const laptops = await getItemsByCategory('laptops');
 
     const someGoods = {
-        phones: phones,
-        laptops: laptops
-    }
+        phones: getRandomItems(phones, 4),
+        laptops: getRandomItems(laptops, 4)
+    };
 
     res.render('main', { categories: someGoods });
 });

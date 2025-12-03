@@ -1,4 +1,5 @@
-import { getCategory, getThreeGoods } from "../db/query.js";
+import { getCategory } from "../db/query/categories.js";
+import { getThreeGoods } from "../db/query/goods.js";
 
 export const render404 = async (res, message = "Page not found") => {
     const categories = await getCategory();

@@ -11,4 +11,4 @@ block content
         h3 Price: $#{product.price}
         p.mb-2= product.description
         p In stock: #{product.stock}
-        a.btn.btn-primary(href=`/category/${category}`) Back to #{category.charAt(0).toUpperCase() + category.slice(1)}
+        a.btn.btn-primary(href=`/category/${product.category}`) Back to #{product.category.charAt(0).toUpperCase() + product.category.slice(1)}
